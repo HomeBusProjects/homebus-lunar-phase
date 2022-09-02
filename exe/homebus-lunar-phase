@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'homebus-lunar-phase/options'
+require 'homebus-lunar-phase/app'
+
+options = HomebusLunarPhase::Options.new
+app = HomebusLunarPhase::App.new(options.options)
+app.run!
+

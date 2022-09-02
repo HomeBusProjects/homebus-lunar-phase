@@ -5,7 +5,7 @@ require 'homebus/device'
 
 require 'astro/moon'
 
-class LunarPhaseHomebusApp < Homebus::App
+class HomebusLunarPhase::App < Homebus::App
   DDC_LUNAR_PHASE = 'org.homebus.experimental.lunar-phase'
 
   def initialize(options)
@@ -39,7 +39,7 @@ class LunarPhaseHomebusApp < Homebus::App
       next_full_moon: Astro::Moon.phasehunt.moon_full.to_time.to_i
     }
 
-    if true || options[:verbose]
+    if options[:verbose]
       pp results
     end
 
