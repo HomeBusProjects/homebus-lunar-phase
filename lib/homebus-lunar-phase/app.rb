@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'homebus/app'
-require 'homebus/device'
+require 'homebus'
 
 require 'astro/moon'
 
@@ -10,13 +9,6 @@ class HomebusLunarPhase::App < Homebus::App
 
   def initialize(options)
     @options = options
-
-    @device = Homebus::Device.new(name: 'Lunar phase',
-                                  manufacturer: 'Homebus',
-                                  model: 'Lunar phase publisher',
-                                  serial_number: 'the moon'
-                                 )
-
     super
   end
 
@@ -25,11 +17,14 @@ class HomebusLunarPhase::App < Homebus::App
   end
 
   def setup!
+    @device = Homebus::Device.new name: 'Lunar phase',
+                                  manufacturer: 'Homebus',
+                                  model: 'Lunar phase publisher',
+                                  serial_number: 'the moon'
   end
 
   def work!
     # https://www.rubydoc.info/gems/astro_moon/0.2/Astro/Moon
-
     results = {
       phase: Astro::Moon.phase.phase * 100,
       illumination: Astro::Moon.phase.illumination,

@@ -9,13 +9,12 @@ GIT
 PATH
   remote: .
   specs:
-    homebus-lunar-phase (0.0.1)
+    homebus-lunar-phase (0.2.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     astro_moon (0.2)
-    dotenv (2.8.1)
     paho-mqtt (1.0.12)
 
 PLATFORMS
@@ -23,7 +22,6 @@ PLATFORMS
 
 DEPENDENCIES
   astro_moon
-  dotenv
   homebus!
   homebus-lunar-phase!
 
